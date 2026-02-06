@@ -31,6 +31,15 @@ function Navbar() {
 
             </div>
             <Outlet />
+            <div className='footer'>
+                <h3>Movie Player</h3>
+                <div className='footerterms'>
+                    <p>Terms and Privacy Notice</p>
+                    <p>Send us feedback</p>
+                    <p>Help</p>
+                </div>
+                <p className='footerpera'>&copy; 2026 Movie Player </p>
+            </div>
         </>
     )
 }

@@ -1,0 +1,47 @@
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    align-items: center; 
+}
+.error img{
+    width: 100%;
+    height: auto;
+}
+.error-message {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    font-size: 22px;
+    margin-top: 3rem;
+}
+.back-btn{
+    padding: 5px 10px;
+    margin: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
+@media screen and (max-width:600px) {
+    .error-message{
+        font-size:18px;
+    }
+}
+@media screen and (max-width:390px) {
+    .group-btn{
+        display: flex;
+        flex-direction: column;
+    }
+    .back-btn{
+        margin: 5px ;
+    }
+    .error-message{
+        font-size:16px;
+    }
+    .error-message p{
+        margin-bottom: 10px;
+    }
+
+}

@@ -19,7 +19,8 @@ function AppLayout(){
             },
             {
               path:"/movies",
-              element:<Movies/>  
+              element:<Movies/>,
+              
             },
             {
               path:"/search",
