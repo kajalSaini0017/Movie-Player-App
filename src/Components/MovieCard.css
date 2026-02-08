@@ -1,0 +1,39 @@
+.movieCardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 20px 10px;
+}
+
+.movieContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.movieContainertext{
+    padding: 20px 10px;
+    
+}
+.movieCard{
+    width:280px ;
+    height:400px;
+    object-fit: contain;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.movieposter{
+    width:280px;
+    height:400px;
+
+}
+@media screen and (max-width:600px) {
+    .movieCard{
+        width: 200px;
+        height: 300px;
+    }
+    .movieposter{
+        width: 200px;
+        height: 300px;
+    }
+}

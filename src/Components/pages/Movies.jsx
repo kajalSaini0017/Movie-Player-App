@@ -1,19 +1,20 @@
 import { useLoaderData } from "react-router"
 import { MovieCard } from "../MovieCard";
+import ImageSlider from "../ImageSlider";
+import style from './movies.module.css'
 export function Movies(){
-    // const  data = useLoaderData();
-    // console.log(data)
+    const  data = useLoaderData();
+   
     
     return(
-        <>
-        <h1>Movie</h1>
         
-        {/* {
-          data.map((section)=>
-             console.log(section)
-        )
-        } */}
-        </>
+        <div className={style.movies}> 
+           <ImageSlider/>
+           <MovieCard data={data}/>
+        </div>
+         
+    
+      
 
         )
 }

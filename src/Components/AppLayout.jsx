@@ -6,6 +6,8 @@ import { Search } from "./pages/Search";
 import { Categories } from "./pages/Categories";
 import { SignIn } from "./pages/SignIn";
 import { ErrorPage } from "./pages/ErrorPage";
+import { getData } from "./ApiData";
+
 
 function AppLayout(){
      const router=createBrowserRouter([
@@ -20,11 +22,12 @@ function AppLayout(){
             {
               path:"/movies",
               element:<Movies/>,
+              loader:getData,
               
             },
             {
               path:"/search",
-              element:<Search/>  
+              element:<Search/>,  
             },
             {
               path:"/categories",
