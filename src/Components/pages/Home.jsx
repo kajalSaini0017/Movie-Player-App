@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router'
 export function Home() {
     const navigate = useNavigate()
     const handleLoginbtn = (e) => {
-        console.log(e.target.innerText)
         if (e.target.innerText === "Sign In") {
             navigate("/signin")
         }

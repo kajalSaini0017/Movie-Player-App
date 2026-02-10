@@ -49,6 +49,7 @@ a.active{
   font-size: 2rem;
   font-weight: 600;
   overflow: hidden;
+  color: red;
 }
 
 .reveal-text::after {
@@ -83,4 +84,14 @@ a.active{
 }
 .footerpera{
   color: white;
+}
+.mainApp{
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction:column ;
+}
+.content{
+  flex: 1;
 }

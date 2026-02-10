@@ -1,4 +1,17 @@
 .movies{
-    background-color: black;
-    color: white;
+    height: 100%;
+    width: 100%;
+    
 }
+.movieContainertext{
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+    
+}
+@media screen and (max-width:600px) {
+    .movieContainertext{
+        font-size: 12px;
+    }
+}
+

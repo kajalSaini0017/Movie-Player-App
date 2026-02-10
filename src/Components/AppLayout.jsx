@@ -3,10 +3,11 @@ import Navbar from "./Navbar";
 import { Home } from "./pages/Home";
 import { Movies } from "./pages/Movies";
 import { Search } from "./pages/Search";
-import { Categories } from "./pages/Categories";
-import { SignIn } from "./pages/SignIn";
+import  SignIn  from "./pages/SignIn";
 import { ErrorPage } from "./pages/ErrorPage";
-import { getData } from "./ApiData";
+import { getData, getmoviesdetails } from "./ApiData";
+import MovieDetails from "./MovieDetails";
+import { signData } from "./pages/SignIn";
 
 
 function AppLayout(){
@@ -25,24 +26,35 @@ function AppLayout(){
               loader:getData,
               
             },
+             {
+              path:"/signin",
+              element:<SignIn/>,
+              action:signData
+            },
             {
               path:"/search",
-              element:<Search/>,  
+              element:<Search/>, 
+              loader:getData 
             },
             {
-              path:"/categories",
-              element:<Categories/>  
+              path:"/movies/movie/:id",
+              element:<MovieDetails/>,
+              loader:getmoviesdetails
             },
             {
-              path:"/signin",
-              element:<SignIn/>  
+              path:"/search/movie/:id",
+              element:<MovieDetails/>,
+              loader:getmoviesdetails
             }
+            
           ]
         },
         {
           path:"*",
           element:<ErrorPage/>
-        }
+        }, 
+        
+       
      ])
 
      

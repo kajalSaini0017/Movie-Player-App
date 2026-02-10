@@ -1,0 +1,45 @@
+.searchSeaction{
+    display: flex;
+    flex-direction: column;
+}
+.SearchContainer {
+    margin-top: 15px;
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 5px;
+
+}
+
+.inputcontainer {
+    width: 75%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 254, 254, 0.193);
+    color: white;
+
+}
+
+.searchbtn {
+    padding: 10px 15px;
+    overflow: hidden;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgba(245, 245, 245, 0.538);
+}
+.searchbtn:hover{
+    background-color:rgba(245, 245, 245, 0.451) ;
+}
+@media screen and (max-width:440px) {
+    .searchbtn{
+        padding: 4px 8px;
+    }
+    .inputcontainer{
+        padding: 4px 10px;
+    }
+    
+}

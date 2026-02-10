@@ -1,0 +1,120 @@
+.signin-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sign-Movie-Player{
+    margin-bottom: 20px;
+    color: red;
+}
+.signin-card {
+  background:rgba(50, 49, 49, 0.266);
+  border: 2px solid grey;
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Left */
+.signin-left {
+  flex: 1;
+  background: #49c4fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin-left img {
+  width: 90%;
+}
+
+/* Right */
+.signin-right {
+  flex: 1;
+  padding: 40px;
+}
+
+.signin-right h2 {
+  margin-bottom: 30px;
+}
+
+.signin-right h2 span {
+  font-weight: bold;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #cbcaca;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #52c4f9;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.sign-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4f63ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  
+}
+.sign-btn:hover {
+  background: #3c4df0;
+}
+
+.signup {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup span {
+  color: #4f63ff;
+  cursor: pointer;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .signin-card {
+    flex-direction: column;
+  }
+
+  .signin-left {
+    padding: 30px;
+  }
+
+  .signin-left img {
+    width: 150px;
+  }
+}

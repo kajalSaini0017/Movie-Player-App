@@ -1,9 +1,16 @@
-body{
+body,html{
   font-family:sans-serif;
+  height: 100%;
+  margin: 0;
 }
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+}
+#root { /* ya tumhara main App container */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

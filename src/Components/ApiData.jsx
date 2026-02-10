@@ -1,7 +1,8 @@
+const APIKEY=import.meta.env.VITE_API_KEY;
 export async function getData() {
 
     const MovieName =["munjya","de de pyaar de","housefull","ek deewane ki deewaniyat","shaitaan"];
-    const APIKEY=import.meta.env.VITE_API_KEY;
+   
 
     const details = await Promise.all(
 
@@ -13,7 +14,7 @@ export async function getData() {
                 return data;
             }
             catch (error) {
-                console.error(error);
+                return null;
 
             }
         }
@@ -21,5 +22,16 @@ export async function getData() {
     return details;
 
 }   
+
+export async function getmoviesdetails({ params }) {
+    try{
+        const res=await fetch(`http://www.omdbapi.com/?apikey=${APIKEY}&i=${params.id}`)
+        const data =await res.json()
+        return data;
+    }
+    catch(error){
+       return null;
+    }
+}
 
 

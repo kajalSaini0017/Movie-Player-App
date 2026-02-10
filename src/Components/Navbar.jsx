@@ -5,7 +5,7 @@ import { CgProfile } from 'react-icons/cg'
 import '../App.css'
 function Navbar() {
     return (
-        <>
+        <div className='mainApp'>
             <div className='navbar'>
                 <div>
                     <h2>Movie Player</h2>
@@ -21,16 +21,16 @@ function Navbar() {
                         <NavLink to="/search"><IoMdSearch className='icon' /></NavLink>
                     </div>
                     <div>
-                        <NavLink to="/categories"><TbGridDots className='icon' /></NavLink>
-                    </div>
-                    <div>
                         <NavLink to="/signin"><CgProfile className='icon' /></NavLink>
                     </div>
 
                 </div>
 
             </div>
-            <Outlet />
+            <div className='content'>
+                  <Outlet />
+            </div>
+          
             <div className='footer'>
                 <h3>Movie Player</h3>
                 <div className='footerterms'>
@@ -40,7 +40,7 @@ function Navbar() {
                 </div>
                 <p className='footerpera'>&copy; 2026 Movie Player </p>
             </div>
-        </>
+        </div>
     )
 }
 export default Navbar;

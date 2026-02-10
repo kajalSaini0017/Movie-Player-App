@@ -1,44 +1,55 @@
 import { useState } from 'react';
 import './MovieCard.css'
+import { NavLink } from 'react-router';
 
-export function MovieCard({ data }) {
-  console.log(data)
+export function MovieCard({ data,basepath }) {
 
-  return (
-    <div className='movieContainer'>
-     <div className='movieContainertext'>
-        <h1>Popular Movies</h1>
-     </div>
-     <div>
-       <ul className="movieCardcontainer">
-        {data.map((innerArray, i) =>
-          innerArray.Search.map((item, j) =>
-             <PosterImage key={`${i}-${j}`} item={item} />
-          )
-        )}
-      </ul>
-     </div>
-     
-     
-    </div>
-  )
+  if (Array.isArray(data)) {
+
+    return (
+      <div className='movieContainer'>
+        <ul className="movieCardcontainer">
+          {data.map((innerArray) =>
+            innerArray.Search.map((item) =>
+              <PosterImage key={item.imdbID} item={item} basepath={basepath}/>
+            )
+
+          )}
+        </ul>
+      </div>
+    )
+  }
+  else if (typeof data === 'object') {
+    return (
+      <div className='movieContainer'>
+        <ul className='movieCardcontainer'>
+          {
+            data.Search.map((item) =>
+              <PosterImage key={item.imdbID} item={item} basepath={basepath}/>
+            )
+          }
+        </ul>
+      </div>
+    )
+  }
 }
-function PosterImage({ item }) {
+
+
+function PosterImage({ item,basepath }) {
   const [isLoaded, setIsLoaded] = useState(true);
   if (!item.Poster || item.Poster === "" || !isLoaded) {
-    // Agar poster empty hai ya load fail ho gaya to kuch bhi render na karo 
     return null;
   }
   return (
-    <li className='movieCard' >
+    <li className='movieCard'  >
+      <NavLink to={`/${basepath}/movie/${item.imdbID}`}>
       <img
         className='movieposter'
         src={item.Poster}
         alt={item.Title || "Movie Poster"}
         onError={() => setIsLoaded(false)}
-        // agar image fail ho jaye to hide kar do 
-        //style={{ width: "150px", height: "220px", objectFit: "cover" }}
       />
+      </NavLink>
     </li>
   );
 }
