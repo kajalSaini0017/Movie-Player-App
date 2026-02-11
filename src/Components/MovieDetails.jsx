@@ -4,7 +4,6 @@ import './MoviesDetails.css'
 function MovieDetails(){
     
     const data=useLoaderData()
-    console.log(data)
     return (
         <div className="movieDetailsComponent">
         <MovieDetailsCard  data={data}/>

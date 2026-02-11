@@ -2,51 +2,72 @@ import { useLoaderData } from "react-router";
 import { MovieCard } from "../MovieCard";
 import './Search.css'
 import { useEffect, useState } from "react";
+
 export function Search() {
-    const [card, setCard] = useState(true)
+    const loaderMovies = useLoaderData();
     const [search, setSearch] = useState("");
     const [movie, setMovie] = useState("");
-    const [moviedata, setMoviedata] = useState();
+    const [error, setError] = useState("")
+    const [moviedata, setMoviedata] = useState(loaderMovies);
+    const [loading, setLoading] = useState(false);
 
     function handleSearch(e) {
-        setSearch(e.target.value)
+        setSearch(e.target.value);
     }
+
     function handleSearchClick() {
         setMovie(search);
-        setCard(false);
-        setSearch("")
+        setSearch("");
     }
-    useEffect( () => {
+
+    useEffect(() => {
         async function fetchMovies(movie) {
             const APIKEY = import.meta.env.VITE_API_KEY;
             try {
-                const res = await fetch(`https://www.omdbapi.com/?apikey=${APIKEY}&s=${movie}`)
+                setLoading(true);
+                setError()
+                const res = await fetch(`https://www.omdbapi.com/?apikey=${APIKEY}&s=${movie}`);
                 const data = await res.json();
-                setMoviedata(data);
-
-            }
-            catch (error) {
-                console.log(error)
+                if (data.Response === "False") {
+                    setError(data.Error || "No movies found");
+                    setMoviedata();
+                }
+                else {
+                    setMoviedata(data);
+                }
+            } catch (error) {
+                setError("Something went wrong. Please try again.")
+            } finally {
+                setLoading(false);
             }
         }
         if (movie) {
             fetchMovies(movie);
         }
+    }, [movie]);
 
-    }, [movie])
-
-
-    const movies = useLoaderData()
     return (
         <div className="searchSeaction">
             <div className="SearchContainer">
-                <input type="text" onChange={handleSearch} value={search} className="inputcontainer" placeholder="Enter movie name" />
+                <input
+                    type="text"
+                    onChange={handleSearch}
+                    value={search}
+                    className="inputcontainer"
+                    placeholder="Enter movie name"
+                />
                 <button className="searchbtn" onClick={handleSearchClick}>Search</button>
             </div>
             <div>
-                {card ? <MovieCard data={movies} basepath="search"/> : <MovieCard data={moviedata} basepath="search"/>}
+                {loading && <div className="loading"><h1>Loading...</h1></div>}
+                {error && (
+                    <div className="error-message-movie">
+                        <h2>{error}</h2>
+                    </div>
+                )}
+
+                <MovieCard data={moviedata} basepath="search" />
             </div>
-            
         </div>
-    )
+    );
 }

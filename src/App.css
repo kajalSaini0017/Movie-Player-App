@@ -1,12 +1,17 @@
 .navbar{
   width: 100%;
   min-height:3rem;
-  background-color: rgb(20, 19, 19);
-  color:red;
+  background-color: rgba(20, 19, 19, 0.825);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0rem 1.5rem;
+  position: fixed;
+  z-index: 20;
+  top: 0px;
+}
+.navbar h2{
+  color: red;
 }
 .pages{
   display: flex;
@@ -94,4 +99,41 @@ a.active{
 }
 .content{
   flex: 1;
+  margin-top: 50px;
+}
+.toogle-btn{
+  color:rgb(197, 197, 197);
+  background-color: black;
+  border: none;
+  font-size: 18px;
+}
+.mobile-menu{
+  position: absolute;
+  top:52px;
+  right:10px;
+  background: #111111dd;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0, 0.5);
+  z-index: 50;
+  height: auto;
+}
+.mobile-menu a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 4px 0;
+}
+.mobile-menu a:hover{
+  color: red;
+}
+@media screen and (max-width:540px) {
+  .footer{
+    font-size: 12px;
+  }
+  .navbar h2{
+    font-size: 20px;
+  }
 }

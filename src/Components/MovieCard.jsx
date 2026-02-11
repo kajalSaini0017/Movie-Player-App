@@ -10,11 +10,14 @@ export function MovieCard({ data,basepath }) {
       <div className='movieContainer'>
         <ul className="movieCardcontainer">
           {data.map((innerArray) =>
-            innerArray.Search.map((item) =>
-              <PosterImage key={item.imdbID} item={item} basepath={basepath}/>
+          
+            innerArray.Search.map((item,index) =>
+              <PosterImage key={`${item.imdbID}-${index}`}item={item} basepath={basepath}/>
             )
+          
 
-          )}
+            )}
+          
         </ul>
       </div>
     )
@@ -24,8 +27,8 @@ export function MovieCard({ data,basepath }) {
       <div className='movieContainer'>
         <ul className='movieCardcontainer'>
           {
-            data.Search.map((item) =>
-              <PosterImage key={item.imdbID} item={item} basepath={basepath}/>
+            data.Search.map((item,index) =>
+              <PosterImage key={`${item.imdbID}-${index}`} item={item} basepath={basepath}/>
             )
           }
         </ul>

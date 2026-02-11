@@ -1,6 +1,5 @@
 body,html{
   font-family:sans-serif;
-  height: 100%;
   margin: 0;
 }
 *{
@@ -10,7 +9,6 @@ body,html{
   overflow-x: hidden;
 }
 #root { /* ya tumhara main App container */
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }

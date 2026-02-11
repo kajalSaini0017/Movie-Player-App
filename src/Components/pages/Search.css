@@ -34,6 +34,18 @@
 .searchbtn:hover{
     background-color:rgba(245, 245, 245, 0.451) ;
 }
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.error-message-movie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
 @media screen and (max-width:440px) {
     .searchbtn{
         padding: 4px 8px;
