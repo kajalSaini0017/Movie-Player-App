@@ -9,7 +9,7 @@ export async function getData() {
         MovieName.map(async(movie) => {
             
             try {
-                const response = await fetch(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${movie}`);
+                const response = await fetch(`https://www.omdbapi.com/?apikey=${APIKEY}&s=${movie}`);
                 const data = await response.json();
                 if(data.Response === "True"){
                      return data;
@@ -31,7 +31,7 @@ export async function getData() {
 
 export async function getmoviesdetails({ params }) {
     try{
-        const res=await fetch(`http://www.omdbapi.com/?apikey=${APIKEY}&i=${params.id}`)
+        const res=await fetch(`https://www.omdbapi.com/?apikey=${APIKEY}&i=${params.id}`)
         const data =await res.json()
         return data;
     }
