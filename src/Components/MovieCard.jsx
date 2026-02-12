@@ -9,14 +9,16 @@ export function MovieCard({ data,basepath }) {
     return (
       <div className='movieContainer'>
         <ul className="movieCardcontainer">
-          {data.map((innerArray) =>
+        {data && data.length > 0 ? (
+          data.map((innerArray) =>
           
             innerArray.Search.map((item,index) =>
               <PosterImage key={`${item.imdbID}-${index}`}item={item} basepath={basepath}/>
             )
           
 
-            )}
+           )) : (<p>No Movies Found</p>) 
+          }
           
         </ul>
       </div>

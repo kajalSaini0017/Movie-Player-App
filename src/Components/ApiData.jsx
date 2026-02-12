@@ -11,7 +11,13 @@ export async function getData() {
             try {
                 const response = await fetch(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${movie}`);
                 const data = await response.json();
-                return data;
+                if(data.Response === "True"){
+                     return data;
+                }
+                else{
+                    return ([]);
+                }
+               
             }
             catch (error) {
                 return null;
