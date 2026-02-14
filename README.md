@@ -7,7 +7,7 @@ Users can browse movies, search for their favorite movies, view detailed informa
 
 ## 🚀 Live Demo
 
-* 🔗 Live Site: https://your-live-link.com
+* 🔗 Live Site: https://movieplayerap.netlify.app
 
 * 🔗 GitHub Repository: https://github.com/kajalSaini0017/Movie-Player-App.git
 

@@ -96,6 +96,7 @@ a.active{
   min-height: 100vh;
   display: flex;
   flex-direction:column ;
+
 }
 .content{
   flex: 1;
@@ -108,7 +109,7 @@ a.active{
   font-size: 18px;
 }
 .mobile-menu{
-  position: absolute;
+  position:fixed;
   top:52px;
   right:10px;
   background: #111111dd;
