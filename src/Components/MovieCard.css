@@ -37,3 +37,13 @@
         height: 300px;
     }
 }
+@media screen and (max-width:500px) {
+    .movieCard{
+        width:130px;
+        height: 200px;
+    }
+    .movieposter{
+        width: 130px;
+        height: 200px;
+    }
+}

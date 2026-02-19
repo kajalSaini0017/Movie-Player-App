@@ -15,6 +15,7 @@ function AppLayout(){
         {
           path:"/",
           element:<Navbar/>,
+          errorElement:<ErrorPage/>,
           children:[
             {
               index:true,
@@ -49,12 +50,7 @@ function AppLayout(){
             
           ]
         },
-        {
-          path:"*",
-          element:<ErrorPage/>
-        }, 
         
-       
      ])
 
      
